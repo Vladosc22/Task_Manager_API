@@ -1,4 +1,4 @@
-package com.vlad.task_manager_api;
+package com.vlad.task_manager_api.task;
 
 
 import jakarta.persistence.*;
