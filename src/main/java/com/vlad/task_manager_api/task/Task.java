@@ -1,5 +1,6 @@
 package com.vlad.task_manager_api.task;
 
+import com.vlad.task_manager_api.user.User;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.FutureOrPresent;
 import jakarta.validation.constraints.NotBlank;
@@ -12,9 +13,15 @@ import java.time.LocalDateTime;
 @Table(name = "tasks")
 public class Task {
 
+    public enum TaskStatus { TODO, IN_PROGRESS, DONE }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
 
     @NotBlank(message = "title is required")
     @Column(nullable = false, length = 200)
@@ -51,6 +58,9 @@ public class Task {
     // getters/setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
+
+    public User getUser() { return user; }
+    public void setUser(User user) { this.user = user; }
 
     public String getTitle() { return title; }
     public void setTitle(String title) { this.title = title; }
