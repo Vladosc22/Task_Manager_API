@@ -51,8 +51,7 @@ com.vlad.task_manager_api
  └── TaskManagerApiApplication.java
 ⚙️ Setup & Run
 1️⃣ Clone the repository
-git clone https://github.com/YOUR_USERNAME/task-manager-api.git
-cd task-manager-api
+git@github.com:Vladosc22/Task_Manager_API.gitcd task-manager-api
 2️⃣ Configure MySQL
 
 Create database:
