@@ -6,9 +6,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class TaskManagerApiApplicationTests {
 
-	@Test
-	void contextLoads() {
-		System.out.println("Hello, World!");
-	}
-
+    @Test
+    void contextLoads() {
+    }
 }
